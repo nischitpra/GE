@@ -4,7 +4,7 @@
 #include <sstream>
 #include <vector>
 
-#include "Constants.h"
+#include "constants.h"
 #include "globals.h"
 
 class Terrain {

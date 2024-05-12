@@ -3,7 +3,7 @@
 
 #include <sstream>
 
-#include "Constants.h"
+#include "constants.h"
 #include "globals.h"
 
 class Player {
