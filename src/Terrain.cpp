@@ -1,4 +1,4 @@
-#include "Terrain.h"
+#include "globals.h"
 
 Terrain::Terrain() {
     // let up walls
@@ -15,10 +15,10 @@ Terrain::Terrain() {
     }
 }
 
-void Terrain::draw(char (&renderGrid)[HEIGHT][WIDTH]) {
+void Terrain::draw() {
     for (int y = 0; y < HEIGHT; y++) {
         for (int x = 0; x < WIDTH; x++) {
-            renderGrid[y][x] = grid[y][x];
+            renderer.grid[y][x] = grid[y][x];
         }
     }
 }

@@ -1,18 +1,15 @@
-#include "World.h"
-
 #include <sstream>
 
-World::World() : collision(), renderer(), terrain(), player() {}
+#include "globals.h"
+
+World::World() {}
 
 // perform physics
-void World::update(char inputKey) {
-    player.inputKey(inputKey);
-    collision.checkTerrainPlayer(terrain, player);
-}
+void World::update(char inputKey) { player.inputKey(inputKey); }
 
 void World::draw() {
-    terrain.draw(renderer.grid);
-    player.draw(renderer.grid);
+    terrain.draw();
+    player.draw();
 
     renderer.draw();
 }

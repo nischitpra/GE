@@ -1,4 +1,4 @@
-#include "Player.h"
+#include "globals.h"
 
 Player::Player() {
     playerX = WIDTH / 2;
@@ -6,29 +6,31 @@ Player::Player() {
 }
 
 void Player::inputKey(char direction) {
-    nextX = playerX;
-    nextY = playerY;
+    int nextX = playerX;
+    int nextY = playerY;
     switch (direction) {
-        case 'w':  // Up
+        case 'w':
             nextY--;
             break;
-        case 's':  // Down
+        case 's':
             nextY++;
             break;
-        case 'a':  // Left
+        case 'a':
             nextX--;
             break;
-        case 'd':  // Right
+        case 'd':
             nextX++;
             break;
     }
+
+    if (terrain.hasCollision(nextX, nextY)) return;
+
+    movePlayer(nextX, nextY);
 }
 
-void Player::commit() { movePlayer(); }
-
-void Player::movePlayer() {
-    playerX = nextX;
-    playerY = nextY;
+void Player::movePlayer(int x, int y) {
+    playerX = x;
+    playerY = y;
 }
 
-void Player::draw(char (&renderGrid)[HEIGHT][WIDTH]) { renderGrid[playerY][playerX] = PLAYER; }
+void Player::draw() { renderer.grid[playerY][playerX] = PLAYER; }

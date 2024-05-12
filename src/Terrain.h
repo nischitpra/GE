@@ -5,11 +5,12 @@
 #include <vector>
 
 #include "Constants.h"
+#include "globals.h"
 
 class Terrain {
    public:
     Terrain();
-    void draw(char (&grid)[HEIGHT][WIDTH]);
+    void draw();
     bool hasCollision(int x, int y);
 
    private:

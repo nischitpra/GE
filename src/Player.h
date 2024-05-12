@@ -4,19 +4,18 @@
 #include <sstream>
 
 #include "Constants.h"
+#include "globals.h"
 
 class Player {
    public:
     int playerX, playerY;
-    int nextX, nextY;
 
     Player();
-    void draw(char (&renderGrid)[HEIGHT][WIDTH]);
+    void draw();
     void inputKey(char direction);
-    void commit();
 
    private:
-    void movePlayer();
+    void movePlayer(int x, int y);
 };
 
 #endif

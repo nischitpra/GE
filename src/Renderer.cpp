@@ -1,6 +1,6 @@
-#include "Renderer.h"
-
 #include <iostream>
+
+#include "globals.h"
 
 Renderer::Renderer() {
     for (int y = 0; y < HEIGHT; y++) {

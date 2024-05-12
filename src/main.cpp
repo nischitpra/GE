@@ -1,18 +1,19 @@
+#include <GL/glew.h>
+#include <GLFW/glfw3.h>
+
 #include <chrono>
 #include <iostream>
 #include <thread>
 
 #include "InputHandler.h"
 #include "TerminalMode.h"
-#include "World.h"
+#include "globals.h"
 
 int main() {
     TerminalMode::initializeTerminal();
 
     InputHandler handler;
     handler.startListening();
-
-    World world = World();
 
     const std::chrono::milliseconds frameDuration(1000 / 60);
     auto lastFrame = std::chrono::steady_clock::now();
